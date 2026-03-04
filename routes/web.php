@@ -9,11 +9,11 @@ Route::get('/', function () {
 Route::get('/perkenalan', function () {
     return '
         <h1>Halo! Nama saya Amrulah</h1>
+        <h2>Perkenalkan nama saya hardiansyah</h2>
         <p>NIM: 4124020 | Prodi: Sistem Informasi</p>
         <p>Saya siap belajar Laravel! 🚀</p>
     ';
+    Route::get('/andi', function () {
+    return 'Halo, saya hardiansyah (Kolaborator)';
 });
-
-Route::get('/perkenalan', function () {
-    return 'Halo, ini halaman perkenalan!';
 });
