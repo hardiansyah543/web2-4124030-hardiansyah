@@ -10,10 +10,17 @@ class ProfilController extends Controller
     {
         $data = [
             'nama' => 'Hardiansyah',
-            'nim' => '4124020',
-            'prodi' => 'Sistem Informasi'
+            'nim' => '4124030',
+            'prodi' => 'Sistem Informasi',
+            'semester' => 4,
+            'keahlian' => ['HTML', 'CSS', 'Laravel', 'PHP']
         ];
 
         return view('profil', $data);
+    }
+
+    public function show($nim)
+    {
+        return "Menampilkan profil mahasiswa dengan NIM: " . $nim;
     }
 }

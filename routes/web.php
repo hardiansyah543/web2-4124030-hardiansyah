@@ -18,7 +18,7 @@ use App\Http\Controllers\KatalogController;
 */
 Route::get('/', function () {
     return view('welcome');
-})->name('home');
+})->name('home.index');
 
 
 /*
@@ -32,28 +32,30 @@ Route::get('/perkenalan', function () {
         <p>Prodi: Sistem Informasi</p>
         <p>Saya siap belajar Laravel! 🚀</p>
     ';
-})->name('perkenalan');
+})->name('perkenalan.index');
 
 Route::get('/about', function () {
     return "Ini adalah halaman About";
-})->name('about');
+})->name('about.index');
 
 Route::get('/kontak', function () {
     return "Ini adalah halaman Kontak";
-})->name('kontak');
+})->name('kontak.index');
 
 
 /*
-| ROUTE CONTROLLER
+| ROUTE CONTROLLER PROFIL
 */
 
-Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
 
-Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog');
+Route::get('/profil/{nim}', [ProfilController::class, 'show'])->name('profil.show');
 
 
 /*
-| ROUTE DINAMIS (PARAMETER)
+| ROUTE CONTROLLER KATALOG
 */
 
-Route::get('/produk/{id}', [KatalogController::class, 'show'])->name('produk.detail');
+Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog.index');
+
+Route::get('/katalog/{id}', [KatalogController::class, 'show'])->name('katalog.show');
