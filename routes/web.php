@@ -32,25 +32,39 @@ Route::get('/lailatul', function () {
    Route Aplikasi Santri Pay
 ========================= */
 
-Route::get('/santripay', function () {
+Route::get('/santripay/menu-santri', function () {
     return '
-        <h1>Santri Pay</h1>
-        <p>Selamat datang di aplikasi pembayaran santri.</p>
+        <h1>Menu Santri</h1>
+        <ul>
+            <li>Login Santri</li>
+            <li>Melihat Saldo Tabungan</li>
+            <li>Riwayat Transaksi</li>
+            <li>Mengajukan Penarikan Uang</li>
+        </ul>
     ';
-})->name('santripay.index');
+})->name('santripay.menu-santri');
 
 
-Route::get('/santripay/pesan', function () {
+Route::get('/santripay/menu-admin', function () {
     return '
-        <h1>Halaman Pemesanan</h1>
-        <p>Santri dapat memesan kebutuhan seperti kitab, sarung, dan alat tulis.</p>
+        <h1>Menu Admin</h1>
+        <ul>
+            <li>CRUD Data Santri</li>
+            <li>Input Setoran Uang</li>
+            <li>Verifikasi Penarikan</li>
+            <li>Laporan Keuangan</li>
+        </ul>
     ';
-})->name('santripay.pesan');
+})->name('santripay.menu-admin');
 
 
-Route::get('/santripay/pembayaran', function () {
+Route::get('/santripay/menu-wali', function () {
     return '
-        <h1>Halaman Pembayaran</h1>
-        <p>Santri dapat melakukan pembayaran pesanan di halaman ini.</p>
+        <h1>Menu Wali Santri</h1>
+        <ul>
+            <li>Login Wali</li>
+            <li>Monitoring Saldo Anak</li>
+            <li>Melihat Riwayat Tabungan</li>
+        </ul>
     ';
-})->name('santripay.pembayaran');
+})->name('santripay.menu-wali');
