@@ -19,6 +19,7 @@ Route::get('/andi', function () {
     return 'Halo, saya Hardiansyah (Kolaborator)';
 });
 
+
 Route::get('/lailatul', function () {
     return '
         <h1>Halo! Nama saya Lailatul Nur Aifa Rahmawati</h1>
@@ -26,3 +27,30 @@ Route::get('/lailatul', function () {
         <p>Saya siap belajar Laravel! (Kolaborator)</p>
     ';
 });
+
+/* =========================
+   Route Aplikasi Santri Pay
+========================= */
+
+Route::get('/santripay', function () {
+    return '
+        <h1>Santri Pay</h1>
+        <p>Selamat datang di aplikasi pembayaran santri.</p>
+    ';
+})->name('santripay.index');
+
+
+Route::get('/santripay/pesan', function () {
+    return '
+        <h1>Halaman Pemesanan</h1>
+        <p>Santri dapat memesan kebutuhan seperti kitab, sarung, dan alat tulis.</p>
+    ';
+})->name('santripay.pesan');
+
+
+Route::get('/santripay/pembayaran', function () {
+    return '
+        <h1>Halaman Pembayaran</h1>
+        <p>Santri dapat melakukan pembayaran pesanan di halaman ini.</p>
+    ';
+})->name('santripay.pembayaran');
