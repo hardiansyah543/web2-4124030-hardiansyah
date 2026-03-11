@@ -8,19 +8,23 @@ class ProfilController extends Controller
 {
     public function index()
     {
-        $profil = [
-            'nama' => 'Amrulah',
-            'nim' => '4124020',
-            'prodi' => 'Sistem Informasi',
-            'semester' => '4',
-            'keahlian' => ['HTML', 'CSS', 'PHP', 'Laravel']
+        $nama = "Amrulah";
+        $nim = "4124020";
+        $prodi = "Sistem Informasi";
+        $semester = "4";
+
+        $keahlian = [
+            "HTML",
+            "CSS",
+            "PHP",
+            "Laravel"
         ];
 
-        return view('profil', $profil);
+        return view('profil', compact('nama','nim','prodi','semester','keahlian'));
     }
 
     public function show($nim)
     {
-        return "Menampilkan profil mahasiswa dengan NIM: " . $nim;
+        return "Menampilkan profil dengan NIM: " . $nim;
     }
 }

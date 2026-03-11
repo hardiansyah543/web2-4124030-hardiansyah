@@ -1,6 +1,7 @@
-<h1>Detail Produk</h1>
+<h1>Detail Fitur</h1>
 
-<p>Nama Produk: {{ $p['nama'] }}</p>
-<p>Harga: Rp {{ $p['harga'] }}</p>
+<p>Nama Fitur : {{ $p['nama'] }}</p>
 
-<a href="/katalog">Kembali ke Katalog</a>
+<p>Biaya : {{ $p['harga'] }}</p>
+
+<a href="{{ route('katalog.index') }}">Kembali ke katalog</a>

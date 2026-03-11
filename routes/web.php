@@ -25,7 +25,7 @@ Route::get('/perkenalan', function () {
     return '
         <h1>Halo! Nama saya Amrulah</h1>
         <p>NIM: 4124020 | Prodi: Sistem Informasi</p>
-        <p>Saya siap belajar Laravel! 🚀</p>
+        <p>Project: Sistem Tabungan Santri (Santri Pay)</p>
     ';
 })->name('perkenalan.index');
 
@@ -35,8 +35,8 @@ Route::get('/andi', function () {
 
 Route::get('/about', function () {
     return '
-        <h1>Halaman About</h1>
-        <p>Ini adalah halaman tentang website Laravel saya.</p>
+        <h1>Tentang Santri Pay</h1>
+        <p>Santri Pay adalah sistem tabungan digital untuk santri.</p>
     ';
 })->name('about.index');
 
