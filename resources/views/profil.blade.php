@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('title', 'Profil')
+
+@section('content')
 <h1>Profil Mahasiswa</h1>
 
 <p>Nama : {{ $nama }}</p>
@@ -12,3 +17,4 @@
     <li>{{ $k }}</li>
 @endforeach
 </ul>
+@endsection

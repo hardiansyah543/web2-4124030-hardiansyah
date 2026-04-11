@@ -4,22 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\KatalogController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
+
+#Web Routes
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home.index');
 
 
-/*
-|------------------------------------------
-| Route Statis (Closure)
-|------------------------------------------
-*/
+
+#Route Statis (Closure)
+
 
 Route::get('/perkenalan', function () {
     return '
@@ -41,11 +36,9 @@ Route::get('/about', function () {
 })->name('about.index');
 
 
-/*
-|------------------------------------------
-| Route Dinamis - Profil
-|------------------------------------------
-*/
+
+#Route Dinamis - Profil
+
 
 Route::get('/profil', [ProfilController::class, 'index'])
     ->name('profil.index');
@@ -54,11 +47,8 @@ Route::get('/profil/{nim}', [ProfilController::class, 'show'])
     ->name('profil.show');
 
 
-/*
-|------------------------------------------
-| Route Dinamis - Katalog
-|------------------------------------------
-*/
+#Route Dinamis - Katalog
+
 
 Route::get('/katalog', [KatalogController::class, 'index'])
     ->name('katalog.index');
