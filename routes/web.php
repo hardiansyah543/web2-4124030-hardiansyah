@@ -8,10 +8,7 @@ use App\Http\Controllers\KatalogController;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-| Di sini kita mendefinisikan semua route untuk aplikasi Laravel
-|
 */
-
 
 /*
 | Route Halaman Utama
@@ -22,9 +19,8 @@ Route::get('/', function () {
 
 
 /*
-| 3 ROUTE STATIS
+| ROUTE STATIS
 */
-
 Route::get('/perkenalan', function () {
     return '
         <h1>Halo! Nama saya Hardiansyah</h1>
@@ -33,6 +29,10 @@ Route::get('/perkenalan', function () {
         <p>Saya siap belajar Laravel! 🚀</p>
     ';
 })->name('perkenalan.index');
+
+Route::get('/andi', function () {
+    return '<h1>Halo saya Hardiansyah (Kolaborator)</h1>';
+})->name('andi.index');
 
 Route::get('/about', function () {
     return "Ini adalah halaman About";
@@ -46,16 +46,32 @@ Route::get('/kontak', function () {
 /*
 | ROUTE CONTROLLER PROFIL
 */
+Route::get('/profil', [ProfilController::class, 'index'])
+    ->name('profil.index');
 
-Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
-
-Route::get('/profil/{nim}', [ProfilController::class, 'show'])->name('profil.show');
+Route::get('/profil/{nim}', [ProfilController::class, 'show'])
+    ->name('profil.show');
 
 
 /*
 | ROUTE CONTROLLER KATALOG
 */
+Route::get('/katalog', [KatalogController::class, 'index'])
+    ->name('katalog.index');
+
+Route::get('/katalog/{id}', [KatalogController::class, 'show'])
+    ->name('katalog.show');
+
+
+/*
+| TAMBAH PRODUK (PERBAIKAN MINIMAL)
+*/
+Route::get('/katalog/create', function () {
+    return view('katalog.create'); // ✅ sudah diperbaiki
+});
 
 Route::get('/katalog', [KatalogController::class, 'index'])->name('katalog.index');
 
-Route::get('/katalog/{id}', [KatalogController::class, 'show'])->name('katalog.show');
+Route::get('/katalog/create', [KatalogController::class, 'create'])->name('katalog.create');
+
+Route::post('/katalog', [KatalogController::class, 'store'])->name('katalog.store');
