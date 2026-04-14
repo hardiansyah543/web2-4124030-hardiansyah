@@ -48,13 +48,13 @@ class KatalogController extends Controller
         abort(404);
     }
 
-    // ✅ TAMBAHAN FITUR CREATE
+    // TAMBAHAN FITUR CREATE
     public function create()
     {
         return view('katalog.create');
     }
 
-    // ✅ TAMBAHAN FITUR STORE
+    // TAMBAHAN FITUR STORE
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -62,7 +62,6 @@ class KatalogController extends Controller
             'harga' => 'required|numeric'
         ]);
 
-        // (sementara belum simpan database)
         return redirect()->route('katalog.index')
                          ->with('success', 'Produk berhasil ditambahkan!');
     }
